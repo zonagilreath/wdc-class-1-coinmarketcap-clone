@@ -3,6 +3,7 @@ from django.db import models
 
 class Cryptocurrency(models.Model):
     name = models.CharField(max_length=100)
+    slug = models.CharField(max_length=100)
     symbol = models.CharField(max_length=10)
     rank = models.IntegerField()
     price_usd = models.DecimalField(max_digits=7, decimal_places=2)

@@ -1,0 +1,69 @@
+{% load humanize %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="https://rmotr.com/static/favicons/apple-icon-60x60.c69b596ccabe.png">
+    <title>Coinmarketcap clone</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <style media="screen">
+      .container {
+        margin-top: 100px;
+      }
+      table {
+        margin-top: 50px;
+      }
+      td.change-up {
+        color: #093;
+      }
+      td.change-down {
+        color: #d14836;
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <a class="navbar-brand" href="#"> <img src="https://rmotr.com/static/favicons/apple-icon-60x60.c69b596ccabe.png" alt="" width="32"> </a>
+    </nav>
+
+    <main role="main" class="container">
+      <div class="starter-template">
+        <h1>Coinmarketcap clone</h1>
+        <p class="lead">This is a sample copy of <a href="https://coinmarketcap.com/" target="_blank">https://coinmarketcap.com/</a>, only for educational purposes.</p>
+          <table class="table table-striped table-sm">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Market Cap</th>
+                <th>Price</th>
+                <th>Volume (24h)</th>
+                <th>Circulating supply</th>
+                <th>Change (24h)</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for coin in coins %}
+              <tr>
+                <td>{{coin.rank}}</td>
+                <td>
+                  <img src="https://coincheckup.com/images/coins/{{coin.slug}}.png" alt="" width="16">
+                  <a href="https://coinmarketcap.com/currencies/{{coin.id}}/">{{coin.name}}</a>
+                </td>
+                <td>${{coin.market_cap_usd|floatformat|intcomma}}</td>
+                <td>${{coin.price_usd|intcomma}}</td>
+                <td>${{coin.volume_usd_24h|floatformat|intcomma}}</td>
+                <td>{{coin.available_supply|floatformat|intcomma}} {{coin.symbol}}</td>
+                <td class="{% if coin.percent_change_24h > 0.0 %}change-up{% else %}change-down{% endif%}">{{coin.percent_change_24h}}%</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+      </div>
+    </main>
+  </body>
+</html>
