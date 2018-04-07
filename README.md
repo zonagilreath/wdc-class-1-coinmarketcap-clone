@@ -19,7 +19,7 @@ Before we get started with Django, we need to make sure our local Python environ
 
 ```bash
 $ mkvirtualenv -p $(which python3)
-$ pip install -r requirements.txt
+$ pip install -r requirements/base.txt
 ```
 
 ## 2) Creating the Django project
@@ -33,7 +33,7 @@ $ cd coinmarketcap/
 $ django-admin startapp cryptocoins
 
 $ export DJANGO_SETTINGS_MODULE=coinmarketcap.settings
-$ export PYTHONPATH=$(realpath coinmarketcap)
+$ export PYTHONPATH=$(readlink -f coinmarketcap)
 ```
 
 ## 3) Run the app for the first time
