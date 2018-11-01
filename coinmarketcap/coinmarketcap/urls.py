@@ -16,9 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from cryptocoins.views import index
+from cryptocoins.views import index, detail
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name='cryptocurrencies-table'),
+    path('currencies/<int:coin_id>', detail, name='cryptocurrencies-detail'),
 ]

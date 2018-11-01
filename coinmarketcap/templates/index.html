@@ -52,7 +52,7 @@
                 <td>{{coin.rank}}</td>
                 <td>
                   <img src="https://coincheckup.com/images/coins/{{coin.slug}}.png" alt="" width="16">
-                  <a href="https://coinmarketcap.com/currencies/{{coin.id}}/">{{coin.name}}</a>
+                  <a href="{% url "cryptocurrencies-detail" coin_id=coin.id %}">{{coin.name}}</a>
                 </td>
                 <td>${{coin.market_cap_usd|floatformat|intcomma}}</td>
                 <td>${{coin.price_usd|intcomma}}</td>
