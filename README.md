@@ -9,6 +9,10 @@ This project is part of RMOTR's [Web Development Career](https://rmotr.com/web-d
 If we do it right, the final result should look something like this:
 ![image](https://user-images.githubusercontent.com/1155573/38173232-207f77b0-3591-11e8-9e95-cd14da306186.png)
 
+And this, for the detail page:
+
+![image](https://user-images.githubusercontent.com/1155573/47885307-29183f80-de13-11e8-9b8e-dbb6e9536f92.png)
+
 So, let's get started! 🎉 
 
 ## 1) Setting up the environment
@@ -103,6 +107,13 @@ Make sure to register the app models in the `cryptocoins/admin.py` module. If yo
 It's great to have the Django Admin, but most of the times you will need to write your own templates. To prevent you from wasting time writing HTML and CSS code, we already provide you with a static version of the app template, named `static-index.html`. Just make a copy of it, and modify it properly using the Django Template Engine to make it show all the cryptocurrencies dynamically.
 
 Of course, you will also need to define a custom view (provable a TemplateView is a good choice for this use case), and link it with the correct URL rule.
+
+## 7) URL sorting and filtering
+
+The list of cryptocurrencies must support some URL arguments to sort and filter the list. Please support the following arguments:
+* `order_by`: Specify the Cryptocurrency field to order the list
+* `order_type`: Either "asc" or "desc" ordering
+* `min_price`: Show only coins with price greater or equal to `min_price`
 
 ## Final notes
 
