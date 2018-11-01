@@ -9,6 +9,10 @@ This project is part of RMOTR's [Web Development Career](https://rmotr.com/web-d
 If we do it right, the final result should look something like this:
 ![image](https://user-images.githubusercontent.com/1155573/38173232-207f77b0-3591-11e8-9e95-cd14da306186.png)
 
+And this, for the detail page:
+
+![image](https://user-images.githubusercontent.com/1155573/47885307-29183f80-de13-11e8-9b8e-dbb6e9536f92.png)
+
 So, let's get started! 🎉 
 
 ## 1) Setting up the environment
