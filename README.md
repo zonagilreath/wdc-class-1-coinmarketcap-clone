@@ -108,6 +108,13 @@ It's great to have the Django Admin, but most of the times you will need to writ
 
 Of course, you will also need to define a custom view (provable a TemplateView is a good choice for this use case), and link it with the correct URL rule.
 
+## 7) URL sorting and filtering
+
+The list of cryptocurrencies must support some URL arguments to sort and filter the list. Please support the following arguments:
+* `order_by`: Specify the Cryptocurrency field to order the list
+* `order_type`: Either "asc" or "desc" ordering
+* `min_price`: Show only coins with price greater or equal to `min_price`
+
 ## Final notes
 
 That's all! 🎉 We have a fully functional Django App just by completing these few steps.  Of course, this is probably using just a 10% of all Django features. But, don't worry. We will have plenty of time to cover the rest in our [Web Development with Django](https://rmotr.com/web-development-django-python-course) career 😁.
