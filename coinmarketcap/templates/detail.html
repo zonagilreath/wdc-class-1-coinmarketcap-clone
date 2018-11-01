@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="https://rmotr.com/static/favicons/apple-icon-60x60.c69b596ccabe.png">
+    <title>Coinmarketcap clone</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <style media="screen">
+      .container {
+        margin-top: 100px;
+      }
+      table {
+        margin-top: 50px;
+      }
+      td.change-up {
+        color: #093;
+      }
+      td.change-down {
+        color: #d14836;
+      }
+      p.price-usd {
+        font-size: 30px;
+      }
+      span.perc-change, p.price-btc {
+        color: grey;
+        font-weight: 100;
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <a class="navbar-brand" href="#"> <img src="https://rmotr.com/static/favicons/apple-icon-60x60.c69b596ccabe.png" alt="" width="32"> </a>
+    </nav>
+
+    <main role="main" class="container">
+      <div class="starter-template">
+        <h1>
+          <img src="https://coincheckup.com/images/coins/{{ coin.slug }}.png" alt="" width="50">
+          {{ coin.name }}
+          <span>({{ coin.symbol }})</span>
+        </h1>
+        <hr>
+        <p class="lead price-usd">
+          ${{ coin.price_usd }} USD
+          <span class="perc-change">({{ coin.percent_change_24h }}%)</span>
+        </p>
+        <p class="lead price-btc">{{ coin.price_btc }} BTC</p>
+      </div>
+    </main>
+  </body>
+</html>
