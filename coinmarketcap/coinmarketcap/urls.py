@@ -21,5 +21,6 @@ from cryptocoins import views
 urlpatterns = [
     path('admin/', admin.site.urls),
 
-    path('', views.index)
+    path('', views.index),
+    path('currencies/<int:coin_id>', views.detail, name='cryptocurrencies-detail'),
 ]
