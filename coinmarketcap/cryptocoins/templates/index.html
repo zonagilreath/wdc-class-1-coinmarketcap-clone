@@ -2,7 +2,7 @@
 <p class="lead">This is a sample copy of <a href="https://coinmarketcap.com/" target="_blank">https://coinmarketcap.com/</a>, only for educational purposes.</p>
 <ul>
   {% for coin in coins %}
-    <li>{{coin.symbol}}: ${{coin.price_usd}}</li>
+    <li>{{coin.symbol}}: ${{coin.price_usd}} (<a href="/currencies/{{coin.id}}">Details</a>)</li>
   {% endfor %}
 </ul>
 
