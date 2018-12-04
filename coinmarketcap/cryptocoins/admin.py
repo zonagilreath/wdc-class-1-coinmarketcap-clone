@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from cryptocoins.models import Cryptocurrency
+from .models import Cryptocurrency
 
 
 @admin.register(Cryptocurrency)
