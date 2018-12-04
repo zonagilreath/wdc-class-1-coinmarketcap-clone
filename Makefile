@@ -4,7 +4,7 @@ END=" \#\#\# \033[0m\n"
 HOST=0.0.0.0
 PORT=8080
 PYTHONPATH=coinmarketcap
-DJANGO_SETTINGS=coinmarketcap.settings.base
+DJANGO_SETTINGS=coinmarketcap.settings
 
 # django-command = django-admin $(1) $(HOST):$(PORT) --settings $(DJANGO_SETTINGS) --pythonpath $(PYTHONPATH)
 django-command = django-admin $(1) $(2) --settings $(DJANGO_SETTINGS) --pythonpath $(PYTHONPATH)
@@ -31,8 +31,7 @@ createsuperuser:
 
 load_initial_data:
 	@echo $(TAG)Load initial data$(END)
-	$(call django-command, load_initial_data)
+	DJANGO_SETTINGS_MODULE=$(DJANGO_SETTINGS) PYTHONPATH=$(PYTHONPATH) python import_sample_data.py
 
-test:
-	@echo $(TAG)Testing$(END)
-	$(call django-command, test artists)
+notebook:
+	PYTHONPATH=$(realpath sample_project) jupyter notebook --ip=127.0.0.1
