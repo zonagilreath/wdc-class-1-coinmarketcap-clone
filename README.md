@@ -22,6 +22,8 @@ $ mkvirtualenv -p $(which python3)
 $ pip install -r requirements/base.txt
 ```
 
+_Note: If you're using RMOTR Notebooks, you don't need to create a virtualenv_
+
 ## 2) Creating the Django project
 
 Now that we have the environment ready, we can create our Django project and app.
@@ -41,18 +43,19 @@ $ export PYTHONPATH=$(readlink -f coinmarketcap)
 If we did everything right, we should be able to run our Django app now. It will be a completely empty app, but at least we should see a welcome page, confirming that our initial set up is working fine.
 
 ```bash
-$ django-admin runserver
+$ make runserver
 ```
 
-Once the Django server is running, visit [http://localhost:8000/](http://localhost:8000/) in your browser. If you see the following page, that means your Django project is fully up and running. 💪 🎉 🙌 
+Once the Django server is running, visit [http://localhost:8080/](http://localhost:8080/) in your browser. If you see the following page, that means your Django project is fully up and running. 💪 🎉 🙌 
 
 ![image](https://user-images.githubusercontent.com/1155573/38176781-7765511e-35cb-11e8-9950-81b87a641111.png)
 
-*Note: Make sure to add the new `cryptocoins` app to `settings.INSTALLED_APPS`*
 
 ## 4) The data model
 
-We will copy the data model from Coinmarketcap. This is an example of the information we will store in our `Cryptocurrency` model.
+First we need to add `cryptocoins` to our `settings.INSTALLED_APPS`. Apps are a way that Django has to modularize projects.
+
+Second, we'll copy the data model from Coinmarketcap. This is an example of the information we will store in our `Cryptocurrency` model.
 
 ```bash
 {
