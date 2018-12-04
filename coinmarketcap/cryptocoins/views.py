@@ -8,6 +8,11 @@ def index(request):
     order_by = 'rank'
 
     coins = Cryptocurrency.objects.all()
+
+    search = request.GET.get('search')
+    if search:
+        coins = coins.filter(name__icontains=search)
+
     if order_param == 'price':
         order_by = 'price_usd'
     if order_direction == 'desc':
