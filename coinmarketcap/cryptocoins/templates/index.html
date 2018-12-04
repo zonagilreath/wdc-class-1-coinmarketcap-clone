@@ -6,8 +6,32 @@
   </head>
   <body>
     <h1>Coinmarketcap clone</h1>
-    <p>Order by <b>Rank</b>: <span>ASC</span> | <a href="?order_param=rank&order_direction=asc">DESC</a></p>
-    <p>Order by <b>Price</b>: <a href="?order_param=price&order_direction=asc">ASC</a> | <a href="?order_param=price&order_direction=desc">DESC</a></p>
+    <p>Order by <b>Rank</b>:
+      {% if order_param == 'rank' and order_direction == 'asc' %}
+        <span>ASC</span>
+      {% else %}
+        <a href="?order_param=rank&order_direction=asc">ASC</a>
+      {% endif %}
+      |
+      {% if order_param == 'rank' and order_direction == 'desc' %}
+        <span>DESC</span>
+      {% else %}
+        <a href="?order_param=rank&order_direction=desc">DESC</a>
+      {% endif %}
+    </p>
+    <p>Order by <b>Price</b>:
+      {% if order_param == 'price' and order_direction == 'asc' %}
+        <span>ASC</span>
+      {% else %}
+        <a href="?order_param=price&order_direction=asc">ASC</a>
+      {% endif %}
+      |
+      {% if order_param == 'price' and order_direction == 'desc' %}
+        <span>DESC</span>
+      {% else %}
+        <a href="?order_param=price&order_direction=desc">DESC</a>
+      {% endif %}
+    </p>
     <p class="lead">This is a sample copy of <a href="https://coinmarketcap.com/" target="_blank">https://coinmarketcap.com/</a>, only for educational purposes.</p>
     <table class="table table-striped">
       <thead>
