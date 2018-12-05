@@ -33,9 +33,6 @@ $ django-admin startproject coinmarketcap
 
 $ cd coinmarketcap/
 $ django-admin startapp cryptocoins
-
-$ export DJANGO_SETTINGS_MODULE=coinmarketcap.settings
-$ export PYTHONPATH=$(readlink -f coinmarketcap)
 ```
 
 ## 3) Run the app for the first time
