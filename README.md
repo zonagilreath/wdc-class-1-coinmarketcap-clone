@@ -89,23 +89,23 @@ For the purpose of this project, it will be very handy to import some testing da
 
 ## 5) Accessing the Django Admin interface
 
-The Django Admin is one of the most famous features of this framework. It will allow us to access, add, edit and delete (CRUD) all our models out of the box.
+The Django Admin is one of the most famous features of this framework. It will allow us to access, add, edit and delete (CRUD) all our models right out of the box.
 To be able to access it, we will first need to create an admin user. To do so, execute the following command.
 
 ```bash
 $ django-admin createsuperuser
 ```
 
-Make sure to register the app models in the `cryptocoins/admin.py` module. If you are done, just visit [http://localhost:8000/admin/](http://localhost:8000/admin/) and login using your admin user. You should see a page similar to this one.
+Make sure to register the app models in the `cryptocoins/admin.py` module. Once that is done, just visit [http://localhost:8000/admin/](http://localhost:8000/admin/) and login using your new admin user. You should see a page similar to this one.
 
 ![image](https://user-images.githubusercontent.com/1155573/38176867-231a00b2-35cd-11e8-83cb-472b57e1c56b.png)
 
 ## 6) Display data in an actual template
 
-It's great to have the Django Admin, but most of the times you will need to write your own templates. To prevent you from wasting time writing HTML and CSS code, we already provide you with a static version of the app template, named `static-index.html`. Just make a copy of it, and modify it properly using the Django Template Engine to make it show all the cryptocurrencies dynamically.
+It's great to have the Django Admin, but most of the time you will need to write your own templates. To save you the time writing HTML and CSS code, we have provided you with a static version of the app template, named `static-index.html`. Just make a copy of it, and modify it properly using the Django Template Engine to make it show all the cryptocurrencies dynamically.
 
-Of course, you will also need to define a custom view (provable a TemplateView is a good choice for this use case), and link it with the correct URL rule.
+Of course, you will also need to define a custom view (a TemplateView is probably a good choice for this use case), and link it with the correct URL rule.
 
 ## Final notes
 
-That's all! 🎉 We have a fully functional Django App just by completing these few steps.  Of course, this is probably using just a 10% of all Django features. But, don't worry. We will have plenty of time to cover the rest in our [Web Development with Django](https://rmotr.com/web-development-django-python-course) career 😁.
+That's all! 🎉 We have a fully functional Django App just by completing these few steps.  Of course, this is probably using just 10% of all Django features. But, don't worry. We will have plenty of time to cover the rest in our [Web Development with Django](https://rmotr.com/web-development-django-python-course) career 😁.
